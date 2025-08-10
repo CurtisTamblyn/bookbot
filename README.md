@@ -1,2 +1,3 @@
 # bookbot
-A repository for a Boot.dev course, Bookbot!
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
