@@ -1,8 +1,10 @@
 import os.path
 from pathlib import Path
-from stats import get_word_count
-from stats import get_character_count
-from stats import get_character_count_report
+from stats import (
+    get_word_count, 
+    get_character_count,
+    get_character_count_report,
+)
 
 def get_book_text(book_path):
     # Make sure a file exists before we try to open it
@@ -27,7 +29,6 @@ def main():
     character_count_report = get_character_count_report(character_count)
     for item in character_count_report:
         print(f"{item[0]}: {item[1]}")
-    #print(f"{character_count_report}")
 
     print("============= END ===============")
     return 0
