@@ -1,3 +1,4 @@
+import sys
 import os.path
 from pathlib import Path
 from stats import (
@@ -15,7 +16,13 @@ def get_book_text(book_path):
     return book_body
 
 def main():
-    book_path = "books/frankenstein.txt"
+    args = sys.argv
+    if(len(args) < 2):
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+
+    book_path = sys.argv[1] 
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {book_path}...")
     book_text = get_book_text(book_path)
@@ -31,7 +38,7 @@ def main():
         print(f"{item[0]}: {item[1]}")
 
     print("============= END ===============")
-    return 0
+    sys.exit(0)
 
 
 main()
